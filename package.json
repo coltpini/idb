@@ -1,0 +1,12 @@
+{
+  "name": "idbify",
+  "version": "1.0.0",
+  "description": "A simple interface for IDB with promises, you can define your schema up front and then it provides put, delete, and get functions.",
+  "main": "idbify.js",
+  "repository": "https://github.com/coltpini/idbify.git",
+  "author": "Colt Pini <coltpini@github.com>",
+  "license": "Apache 2.0",
+  "scripts": {
+    "uglify": "uglifyjs idbify.js -c -m -o idbify-min.js --source-map"
+  }
+}
