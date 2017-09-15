@@ -53,11 +53,11 @@ export default class IDB {
       })
     });
   }
-  find({index, type="key"}){
+  find({index, term, type="key"}){
     return this.go().then( db => {
       const {trx, store} = this.getTransaction(db, "readonly");
       const context = index ? store.index(index) : store;
-      const cursor = context.openCursor();
+      const cursor = term ? context.openCursor(IDBKeyRange.only(value)) : context.openCursor();
       return new Promise( (res, rej) => {
         let results = [];
         cursor.onsuccess = (e) => {
