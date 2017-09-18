@@ -1,12 +1,22 @@
 {
   "name": "idbify",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "description": "A simple interface for IDB with promises, you can define your schema up front and then it provides put, delete, and get functions.",
   "main": "idbify.js",
+  "module": "idbify.min.js",
+  "browser": "idbify.es5.js",
   "repository": "https://github.com/coltpini/idbify.git",
   "author": "Colt Pini <coltpini@github.com>",
   "license": "Apache 2.0",
   "scripts": {
-    "uglify": "uglifyjs idbify.js -c -m -o idbify-min.js --source-map"
+    "uglify": "uglifyjs idbify.js -c -m -o dist/idbify-min.js --source-map",
+    "babelify": "babel idbify.js -o dist/idbify.es5.js --source-maps --presets=es2015 --minified --compact"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015": "^6.24.1",
+    "uglify-es": "^3.1.1"
   }
 }
