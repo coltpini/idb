@@ -1,6 +1,6 @@
 {
   "name": "idbify",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0-beta.3",
   "description": "A simple interface for IDB with promises, you can define your schema up front and then it provides put, delete, and get functions.",
   "main": "idbify.js",
   "module": "dist/idbify.min.js",
