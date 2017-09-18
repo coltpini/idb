@@ -1,4 +1,4 @@
-export default class IDB {
+export default class Idbify {
   constructor({schema, storeName, v}){
     this.schema = schema;
     this.storeName = storeName;
@@ -57,7 +57,7 @@ export default class IDB {
     return this.go().then( db => {
       const {trx, store} = this.getTransaction(db, "readonly");
       const context = index ? store.index(index) : store;
-      const cursor = term ? context.openCursor(IDBKeyRange.only(value)) : context.openCursor();
+      const cursor = term ? context.openCursor(IDBKeyRange.only(term)) : context.openCursor();
       return new Promise( (res, rej) => {
         let results = [];
         cursor.onsuccess = (e) => {
