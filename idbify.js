@@ -16,7 +16,7 @@ export default class Idbify {
   }
   upgrade(db){
     let options = this.schema[0].options || {};
-    if(this.schema[0].type === 'index'){
+    if(this.schema[0].type === 'keyPath'){
       options.keyPath = this.schema[0].name;
     }
     const os = db.createObjectStore(this.storeName, options);
