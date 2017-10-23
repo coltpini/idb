@@ -3,14 +3,14 @@ export default class Idbify {
     this.schema = schema;
     this.storeName = storeName;
     this.v = v;
-    this.go();
+    this.go().catch(err => err);
   }
   go(){
     return new Promise( (res, rej) => {
   		const iReq = indexedDB.open(this.storeName, this.v);
   		iReq.addEventListener("error", e => rej(e.target.error));
   		iReq.addEventListener("success", e => res(e.target.result));
-  		iReq.addEventListener("upgradeneeded", typeof this.schema === 'undefined' ? rej('upgrade needed, but no schema') : e => this.upgrade(e.target.result));
+  		iReq.addEventListener("upgradeneeded", typeof this.schema === 'undefined' ? e => rej('upgrade needed, but no schema') : e => this.upgrade(e.target.result));
   		iReq.addEventListener('blocked', (e) => rej('blocked') );
   	} )
   }
