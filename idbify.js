@@ -10,7 +10,7 @@ export default class Idbify {
   		const iReq = indexedDB.open(this.storeName, this.v);
   		iReq.addEventListener("error", e => rej(e.target.error));
   		iReq.addEventListener("success", e => res(e.target.result));
-  		iReq.addEventListener("upgradeneeded", this.schema ? e => this.upgrade(e.target.result) : rej('upgrade needed, but no schema'));
+  		iReq.addEventListener("upgradeneeded", typeof this.schema === 'undefined' ? rej('upgrade needed, but no schema') : e => this.upgrade(e.target.result));
   		iReq.addEventListener('blocked', (e) => rej('blocked') );
   	} )
   }
