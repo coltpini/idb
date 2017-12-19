@@ -12,7 +12,7 @@ This would create a DB with `myKey` being the DB keyPath.
   let mySchema = [
     {
       name: 'myKey',
-      type: 'keypath',
+      type: 'keyPath',
       options: {
         // you can add the options here that createObjectStore uses, except keyPath, this will take care of that for you.
       }
