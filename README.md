@@ -60,6 +60,8 @@ That will initialize the idb and store the schema for if the structure needs to 
 
 - `delete(key)`: this will delete a single record at the passed in key. If you want to delete multiple then you would use find to return what you need, then iterate over that filtered list to delete.
 
+- `clear()`: this will remove all data in the store.
+
 ## Other functions.
 
 The functions above would be the ones that you would normally use, but there may be some instances where you need something more. Such as stronger cursors in the find function. There are a few other internal functions that would be helpful for things like that.
