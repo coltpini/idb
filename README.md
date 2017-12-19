@@ -56,7 +56,7 @@ That will initialize the idb and store the schema for if the structure needs to 
 - `find({index, term, type="key"})`: This will return all the entries for the specified key/index.
   - `index`: this defines the context of the search. If you created an index in the schema you can specify that index here and it will search only on that index.
   - `term`: this is the value you are searching for in the index. This isn't similar to the `LIKE` in a where clause. You are searching for a specific key. If no key and term are used it will return the whole dataset and you can preform the filter on the returned array.
-  - `type`: the default value for type is `key` and will return a list of keys based on the index set you chose. The other type available is `value` and will return the full object instead of just the key. There is a preformance hit when using value so it is not recommended unless you know why you are doing it.
+  - `type`: the default value for type is `key` and will return a list of keys based on the index set you chose. The other type available is `value` and will return the full object instead of just the key. There is a performance hit when using value so it is not recommended unless you know why you are doing it.
 
 - `delete(key)`: this will delete a single record at the passed in key. If you want to delete multiple then you would use find to return what you need, then iterate over that filtered list to delete.
 
