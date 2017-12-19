@@ -84,4 +84,14 @@ export default class Idbify {
       })
     });
   }
+  clear(){
+    return this.go().then( db => {
+      const {trx, store} = this.getTransaction(db);
+      const clear = store.clear()
+      return new Promise( (res,rej) => {
+        clear.onsuccess = () => res('cleared');
+        clear.onerror = () => rej('failed to clear');
+      })
+    });
+  }
 }
