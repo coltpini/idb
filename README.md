@@ -49,7 +49,7 @@ That will initialize the idb and store the schema for if the structure needs to 
 
 ## Functions and use:
 
-- `put(data)`: this will take the object and add it to the iDB. It is a put so if it is a new key it will add it, if it is an existing key it will update it. This can be an array or a single object. If it is an array it will put each item in the array into the idb.
+- `put(data)`: this will take the object and add it to the iDB. It is a put so if it is a new key it will add it, if it is an existing key it will update it. This can be an array or a single object. If it is an array it will put each item in the array into the idb. This returns a promise that resolves to "completed" on success and an error on rejected.
 
 - `get(key)`: This will get the entry at the specified key. This will return one result. If there is more than one entry for a key, non-unique key, it will return the first.
 
