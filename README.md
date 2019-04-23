@@ -42,7 +42,7 @@ You only need to define the key and indexes, no need to worry about non key or i
 
 To create and instance:
 ```
-let idb_myStore = Idbify({schema, storeName: 'myStore', v: 1});
+const idb_myStore = Idbify({schema, storeName: 'myStore', v: 1});
 ```
 
 That will initialize the idb and store the schema for if the structure needs to be rebuilt.
